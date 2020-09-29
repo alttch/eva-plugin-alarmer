@@ -32,7 +32,7 @@ SFA:
 
 ```ini
 [alarmer]
-lm=mws1 ; ID of LM PLC connected to SFA
+lm = mws1 ; ID of LM PLC connected to SFA
 db = runtime/db/somedatabase.db ; SAME database as specified before
 ```
 
@@ -46,9 +46,9 @@ value:
 * 2 - the alarm is in the alarm state
 
 Each alarm includes 3 elements: one logical variable (name is equal to alarm
-ID) and two decision matrix rules: one for the warning state (ending with
-"\_w") and another one for the alarm state (ending with "\_a"). The rules can
-represent monitoring of same EVA ICS item or different ones.
+ID, created in "alarmer" supergroup) and two decision matrix rules: one for the
+warning state (ending with "\_w") and another one for the alarm state (ending
+with "\_a"). The rules can monitor same EVA ICS item or different ones.
 
 When alarm rule matches an event, the alarm is triggered and lvar value is set.
 Also, if there are users subscribed, email notifications are sent to their
@@ -62,8 +62,8 @@ called from custom LM PLC macros as well.
 
 If the alarm lvar has "0" status, the alarm is considered as disabled.
 
-The alarm log is stored in the specified database and contains all possible
-info about alarm actions. The field action code value "T" means alarm was
+The alarm log is stored in the specified database and contains all available
+info about alarm actions. The field "action" code value "T" means alarm was
 triggered, "A" is for acknowledged.
 
 ## Exposed API methods
@@ -94,12 +94,7 @@ triggered, "A" is for acknowledged.
     * a - alarm rule props (optional)
     * save - auto-save rules (usually true)
 
-* **x\_alarmer\_list\_rule_props**(i, w, a, save) - list alarm rule
-  properties, requires the master key
-
-    * i - alarm id
-
-* **x\_alarmer\_list\_rule_props**(i, w, a, save) - list alarm rule
+* **x\_alarmer\_list\_rule_props**(i) - list alarm rule
   properties, requires the master key
 
     * i - alarm id
@@ -108,6 +103,9 @@ triggered, "A" is for acknowledged.
   key
 
     * i - alarm id
+
+There's no function to list alarms. To get that info, just list lvars in
+"alarmer" supergroup.
 
 ### User functions
 
