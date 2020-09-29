@@ -111,7 +111,7 @@ triggered, "A" is for acknowledged.
 
     * i - alarm id
 
-* **x\_alarmer\_get\_log**(i) - get alarm log, the user (or API key) must
+* **x\_alarmer\_get\_log**(i, n) - get alarm log, the user (or API key) must
   have an access to the alarm logical variable.
 
     * i - alarm id (required for user, optional for master key)
