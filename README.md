@@ -117,13 +117,13 @@ triggered, "A" is for acknowledged.
     * i - alarm id (required for user, optional for master key)
     * n - max number of records to get (default: 100)
 
-* **x\_alarmer\_subscribe**(i, l) - subscribe to the alarm, user MUST be logged
-  in and have an access to alarm lvar (at least read-only)
+* **x\_alarmer\_subscribe**(i, l) - subscribe to the alarm, the user MUST be
+  logged in and have an access to alarm lvar (at least read-only)
 
     * i - alarm id
     * l - alarm level (1 or 2, required)
 
-* **x\_alarmer\_unsubscribe**(i) - unsubscribe from the alarm, user MUST be
+* **x\_alarmer\_unsubscribe**(i) - unsubscribe from the alarm, the user MUST be
   logged in and have an access to alarm lvar (at least read-only)
 
     * i - alarm id
