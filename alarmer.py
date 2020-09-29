@@ -1,7 +1,7 @@
 __author__ = 'Altertech, https://www.altertech.com/'
 __copyright__ = 'Copyright (C) 2012-2020 Altertech'
 __license__ = 'Apache License 2.0'
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 import eva.pluginapi as pa
 import sqlalchemy as sa
@@ -240,6 +240,22 @@ class APIFuncs(pa.APIX):
             sql('delete from alarmer_sub where u=:u '
                 'and utp=:utp and alarm_id=:alarm_id'), **kw)
         return True
+
+    @pa.api_log_i
+    def list_subscriptions(self, **kwargs):
+        u = pa.get_aci('u')
+        if not u:
+            raise FunctionFailed('user is not logged in')
+        utp = pa.get_aci('utp')
+        if not utp:
+            utp = ''
+        kw = {'u': u, 'utp': utp}
+        db = get_db()
+        return [
+            dict(x) for x in db.execute(
+                sql('select alarm_id, level '
+                    'from alarmer_sub where u=:u and utp=:utp'), **kw)
+        ]
 
     @pa.api_log_i
     @pa.api_need_master

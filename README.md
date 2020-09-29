@@ -128,6 +128,9 @@ triggered, "A" is for acknowledged.
 
     * i - alarm id
 
+* **x\_alarmer\_list\_subscriptions**(i) - list subscriptions, the user MUST be
+  logged in
+
 There's no function to list alarms. To get that info, just list lvars in
 "alarmer" supergroup.
 
