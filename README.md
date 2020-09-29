@@ -104,9 +104,6 @@ triggered, "A" is for acknowledged.
 
     * i - alarm id
 
-There's no function to list alarms. To get that info, just list lvars in
-"alarmer" supergroup.
-
 ### User functions
 
 * **x\_alarmer\_ack**(i) - acknowledges alarm, the user (or API key) must have
@@ -130,3 +127,7 @@ There's no function to list alarms. To get that info, just list lvars in
   logged in and have an access to alarm lvar (at least read-only)
 
     * i - alarm id
+
+There's no function to list alarms. To get that info, just list lvars in
+"alarmer" supergroup.
+
