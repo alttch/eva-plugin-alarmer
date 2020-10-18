@@ -203,7 +203,7 @@ class APIFuncs(pa.APIX):
         db = get_db()
         u = pa.get_aci('u')
         if not u:
-            raise FunctionFailed('user is not logged in')
+            raise pa.FunctionFailed('user is not logged in')
         utp = pa.get_aci('utp')
         if not utp:
             utp = ''
@@ -231,7 +231,7 @@ class APIFuncs(pa.APIX):
         db = get_db()
         u = pa.get_aci('u')
         if not u:
-            raise FunctionFailed('user is not logged in')
+            raise pa.FunctionFailed('user is not logged in')
         utp = pa.get_aci('utp')
         if not utp:
             utp = ''
@@ -245,7 +245,7 @@ class APIFuncs(pa.APIX):
     def list_subscriptions(self, **kwargs):
         u = pa.get_aci('u')
         if not u:
-            raise FunctionFailed('user is not logged in')
+            raise pa.FunctionFailed('user is not logged in')
         utp = pa.get_aci('utp')
         if not utp:
             utp = ''
