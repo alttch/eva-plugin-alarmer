@@ -1,7 +1,7 @@
 __author__ = 'Altertech, https://www.altertech.com/'
 __copyright__ = 'Copyright (C) 2012-2020 Altertech'
 __license__ = 'Apache License 2.0'
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 import eva.pluginapi as pa
 import sqlalchemy as sa
@@ -260,9 +260,9 @@ class APIFuncs(pa.APIX):
     @pa.api_log_i
     @pa.api_need_master
     def create(self, **kwargs):
-        d, g, rw, ra, save = pa.parse_api_params(kwargs, 'dgwaS', 'ssRRb')
+        u, d, g, rw, ra, save = pa.parse_api_params(kwargs, 'udgwaS', 'sssRRb')
         import uuid
-        alarm_id = str(uuid.uuid4())
+        alarm_id = u if u else str(uuid.uuid4())
         alarm_full_id = f'{g if g else ""}{"/" if g else ""}{alarm_id}'
         lvar_id = f'alarmer{"/" if g else ""}{g if g else ""}/{alarm_id}'
         try:

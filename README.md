@@ -77,6 +77,7 @@ triggered, "A" is for acknowledged.
     * a - alarm rule props (same as for set_rule_prop LM PLC API call)
     * d - alarm description (optional)
     * g - alarm group (optional)
+    * u - pre-defined alarm UUID (optional)
     * save - auto-save lvar/rules after creation (usually true)
 
 * **x\_alarmer\_set\_description**(i, d, save) - change alarm description,
