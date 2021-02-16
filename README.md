@@ -19,7 +19,7 @@ The plugin requires installation into both LM PLC (processes alarms) and SFA
 LM PLC:
 
 ```ini
-[alarmer]
+[plugin.alarmer]
 db = runtime/db/somedatabase.db ; SAME database as for userinfo plugin
 keep_log = 86400 ; period to keep alarm log records (seconds)
 userinfo_email_field = email ; userinfo plugin field containing user email
@@ -31,7 +31,7 @@ be also properly configured.
 SFA:
 
 ```ini
-[alarmer]
+[plugin.alarmer]
 lm = mws1 ; ID of LM PLC connected to SFA
 db = runtime/db/somedatabase.db ; SAME database as specified before
 ```
